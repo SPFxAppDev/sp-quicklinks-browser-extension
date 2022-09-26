@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SharePoint Quicklinks</title>
+    <meta charset="utf-8">
+    <style>
+        .container {
+            min-width: 500px;
+        }
+        div.table { 
+            display: table; 
+            border-collapse:collapse; 
+        }
+
+        div.row { 
+            display:table-row; 
+        }
+        div.cell { 
+        display:table-cell; 
+        padding:5px; 
+        width: 32%
+        }
+
+        div.header-row div.cell {
+            padding: 20px 5px;
+            border-bottom: solid 2px #aeaeae;
+            border-top: solid 2px #aeaeae;
+        }
+
+        div.header {
+            text-align: center;
+            font-weight: 600;
+        }
+
+        button {
+            appearance: none;
+            background-color: #FAFBFC;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+            box-sizing: border-box;
+            color: #24292E;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            padding: 6px 16px;
+            position: relative;
+            transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+            word-wrap: break-word;
+        }
+
+        button:hover {
+            background-color: #F3F4F6;
+            text-decoration: none;
+            transition-duration: 0.1s;
+        }
+
+        button:disabled {
+            background-color: #FAFBFC;
+            border-color: rgba(27, 31, 35, 0.15);
+            color: #959DA5;
+            cursor: default;
+        }
+
+        button:active {
+            background-color: #EDEFF2;
+            box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+            transition: none 0s;
+        }
+
+        button:focus {
+            outline: 1px transparent;
+        }
+
+        button:before {
+            display: none;
+        }
+
+        button:-webkit-details-marker {
+            display: none;
+        }
+
+        .success::before,
+        .error::before,
+        .warning::before,
+        .info::before{
+            font-size:25px;line-height:1;margin-left:-25px;vertical-align:bottom
+        }
+        .success,.error,.warning,.info {
+            margin:15px;padding:8px 5px 8px 30px;width:auto
+        }
+        
+        .error{color:#c00;background-color:#fee;border:solid 1px #c00}
+        .success{background-color:#efe;border:1px solid #090;color:#090}
+        .info{background-color:#def;border:1px solid #06f;color:#06f}
+        .warning{background-color:#fcf8e3;border:1px solid #e3d5a3;color:#8a6d3b}
+    </style>
+</head>
+<body>
+    
+
+    <div class="container">
+
+
+        <div class="tabel jsWebUrls">
+            <div class="row header-row">
+                <div class="cell">
+                    Headline: <input type="text" name="webUrlsHeading" placeholder="Website Urls Heading" value="" />
+                </div>
+                <div class="cell">
+                    
+                </div>
+                <div class="cell">
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="cell header">
+                    URL
+                </div>
+                <div class="cell header">
+                    Label
+                </div>
+                <div class="cell header">
+                    Enabled
+                </div>
+            </div>
+        </div>
+
+        <div class="tabel jsPageUrls">
+            <div class="row header-row">
+                <div class="cell">
+                    Headline: <input type="text" name="pageUrlsHeading" placeholder="Page & Development Urls Heading" value="" />
+                </div>
+                <div class="cell header">
+                    
+                </div>
+                <div class="cell header">
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="cell header">
+                    URL
+                </div>
+                <div class="cell header">
+                    Label
+                </div>
+                <div class="cell header">
+                    Enabled
+                </div>
+            </div>
+        </div>
+
+        <div class="tabel jsCustomUrls">
+            <div class="row header-row">
+                <div class="cell">
+                    Headline: <input type="text" name="customUrlsHeading" placeholder="Custom Urls Heading" value="" />
+                </div>
+                <div class="cell">
+                    
+                </div>
+                <div class="cell">
+                    
+                </div>
+            </div>
+            
+            <div class="row">
+                <div class="cell header">
+                    URL
+                </div>
+                <div class="cell header">
+                    Label
+                </div>
+                <div class="cell header">
+                    Enabled
+                </div>
+            </div>
+
+            
+        </div>
+        <div id="status"></div>
+
+        <div class="info">
+            You can use this placeholder in the url fields: <strong>{webapp}</strong>, <strong>{weburl}</strong>, <strong>{pageurl}</strong>
+        </div>
+
+        <button id="addNew" type="button">Add new link</button>
+        <button id="save" type="button">Save</button>
+    </div>
+    
+</body>
+<script src="general.js"></script>
+<script src="options.js"></script>
+</html>

@@ -1,0 +1,28 @@
+{
+    "name": "SharePoint Quicklinks",
+    "version": "0.0.1",
+    "description": "Useful SharePoint Quicklinks & Custom Links",
+    "manifest_version": 3,
+    "author": "spfx-app.dev",
+    "options_ui": {
+        "page": "options.html",
+        "open_in_tab": false
+    },
+    "icons": { 
+        "16": "./icon16.png",
+        "19": "./icon19.png",
+        "32": "./icon38.png",
+        "38": "./icon38.png",
+        "48": "./icon48.png",
+        "128": "./icon128.png" 
+    },
+    "action": {
+        "default_popup": "popup.html",
+        "default_icon": "./icon128.png"
+    },
+	"permissions": [
+        "tabs",
+        "storage",
+		"activeTab"
+    ]
+}

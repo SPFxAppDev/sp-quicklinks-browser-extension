@@ -1,0 +1,135 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>SharePoint Quicklinks</title>
+    <meta charset="utf-8">
+
+    <style>
+
+        .container {
+            min-width: 400px;
+            padding: 10px;
+        }
+        .no-sharepoint-container {
+
+        }
+
+        .hide {
+            display: none;
+        }
+
+        .show {
+            display: block;
+        }
+
+        ul {
+            list-style: none;
+            margin: 5px 0;
+            padding: 0;
+            border: none;
+        }
+        
+        li {
+            border-bottom: 1px solid #90bade;
+            margin: 0;
+        }
+
+        li a, li a:hover, li a:focus, a:visited, a:active {
+            display: block;
+            padding: 5px 5px 5px 0.5em;
+            /*background-color: rgb(17, 24, 39);*/
+            color: rgb(17, 24, 39);
+            text-decoration: none;
+            font-size: 14px;
+            width: 100%;
+        }
+        
+        .button {
+            appearance: none;
+            background-color: #FAFBFC;
+            border: 1px solid rgba(27, 31, 35, 0.15);
+            border-radius: 6px;
+            box-shadow: rgba(27, 31, 35, 0.04) 0 1px 0, rgba(255, 255, 255, 0.25) 0 1px 0 inset;
+            box-sizing: border-box;
+            color: #24292E;
+            cursor: pointer;
+            display: inline-block;
+            font-family: -apple-system, system-ui, "Segoe UI", Helvetica, Arial, sans-serif, "Apple Color Emoji", "Segoe UI Emoji";
+            font-size: 14px;
+            font-weight: 500;
+            line-height: 20px;
+            list-style: none;
+            padding: 6px 16px;
+            position: relative;
+            transition: background-color 0.2s cubic-bezier(0.3, 0, 0.5, 1);
+            user-select: none;
+            -webkit-user-select: none;
+            touch-action: manipulation;
+            vertical-align: middle;
+            white-space: nowrap;
+            word-wrap: break-word;
+        }
+
+        .button:hover {
+            background-color: #F3F4F6;
+            text-decoration: none;
+            transition-duration: 0.1s;
+        }
+
+        .button:disabled {
+            background-color: #FAFBFC;
+            border-color: rgba(27, 31, 35, 0.15);
+            color: #959DA5;
+            cursor: default;
+        }
+
+        .button:active {
+            background-color: #EDEFF2;
+            box-shadow: rgba(225, 228, 232, 0.2) 0 1px 0 inset;
+            transition: none 0s;
+        }
+
+        button:focus {
+            outline: 1px transparent;
+        }
+
+        .button:before {
+            display: none;
+        }
+
+        .button:-webkit-details-marker {
+            display: none;
+        }
+
+        button {
+            border-width: 0px;
+            background-color: #fff;
+            cursor: pointer;
+        }
+
+        
+    </style>
+</head>
+<body>
+    
+    <div class="container">
+        <div class="no-sharepoit-container hide">
+            The current website is not a sharepoint.com website. This extension will not work!
+        </div>
+        <div class="qucklinks-container">
+            Please wait...
+        </div>
+
+        <button class="button" id="go-to-options">Configure URLs</button>
+    </div>
+
+    Developed by <button id="copyright" type="button">spfx-app.dev</button>
+    <span style="float: right"> v1.0.0</span>
+    
+</body>
+
+
+
+<script src="general.js"></script>
+<script src="popup.js"></script>
+</html>

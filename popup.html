@@ -107,13 +107,28 @@
             cursor: pointer;
         }
 
+        .success::before,
+        .error::before,
+        .warning::before,
+        .info::before{
+            font-size:25px;line-height:1;margin-left:-25px;vertical-align:bottom
+        }
+        .success,.error,.warning,.info {
+            margin:15px;padding:8px 5px 8px 30px;width:auto
+        }
+        
+        .error{color:#c00;background-color:#fee;border:solid 1px #c00}
+        .success{background-color:#efe;border:1px solid #090;color:#090}
+        .info{background-color:#def;border:1px solid #06f;color:#06f}
+        .warning{background-color:#fcf8e3;border:1px solid #e3d5a3;color:#8a6d3b}
+
         
     </style>
 </head>
 <body>
     
     <div class="container">
-        <div class="no-sharepoit-container hide">
+        <div class="no-sharepoit-container info hide">
             The current website is not a sharepoint.com website. This extension will not work!
         </div>
         <div class="qucklinks-container">
@@ -124,7 +139,7 @@
     </div>
 
     Developed by <button id="copyright" type="button">spfx-app.dev</button>
-    <span style="float: right"> v1.0.0</span>
+    <span style="float: right"> v0.0.1</span>
     
 </body>
 

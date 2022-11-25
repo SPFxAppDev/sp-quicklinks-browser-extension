@@ -1,6 +1,6 @@
 {
     "name": "SharePoint Quicklinks",
-    "version": "0.0.4",
+    "version": "0.0.5",
     "description": "Useful SharePoint Quicklinks & Custom Links",
     "manifest_version": 3,
     "author": "spfx-app.dev",

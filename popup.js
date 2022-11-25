@@ -61,14 +61,13 @@ chrome.storage.sync.get({
             isListOrLibrary = true;
     
             let splittedUrl = url.substring(0, url.indexOf("/forms/")).split("/");
-            // splittedUrl.splice(-1);
+            splittedUrl.splice(-1);
             spWebUrl = splittedUrl.join('/');
         }
         else if(url.indexOf("/lists/") > 0) {
             isListOrLibrary = true;
     
             let splittedUrl = url.substring(0, url.indexOf("/lists/")).split("/");
-            // splittedUrl.splice(-1);
             spWebUrl = splittedUrl.join('/');
         }
         else if(url.indexOf("/_layouts/") > 0) {

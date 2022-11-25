@@ -60,15 +60,15 @@ chrome.storage.sync.get({
         else if(url.indexOf("/forms/") > 0) {
             isListOrLibrary = true;
     
-            let splittedUrl = url.substring(0, url.indexOf("/list/")).split("/");
-            splittedUrl.splice(-1);
+            let splittedUrl = url.substring(0, url.indexOf("/forms/")).split("/");
+            // splittedUrl.splice(-1);
             spWebUrl = splittedUrl.join('/');
         }
-        else if(url.indexOf("/list/") > 0) {
+        else if(url.indexOf("/lists/") > 0) {
             isListOrLibrary = true;
     
-            let splittedUrl = url.substring(0, url.indexOf("/list/")).split("/");
-            splittedUrl.splice(-1);
+            let splittedUrl = url.substring(0, url.indexOf("/lists/")).split("/");
+            // splittedUrl.splice(-1);
             spWebUrl = splittedUrl.join('/');
         }
         else if(url.indexOf("/_layouts/") > 0) {

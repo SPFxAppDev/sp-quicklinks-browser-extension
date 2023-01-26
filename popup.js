@@ -40,24 +40,27 @@ chrome.storage.sync.get({
         }
     
         let spWebAppUrl = url.split('/').slice(0, 3).join('/');
-        let spWebUrl = "";
-        let pageUrl = "";
+        let spWebUrl = url;
+        let pageUrl = url;
     
     
         let isListOrLibrary = false;
         let isPage = false;
+        let isPagesLib = false;
         
         
-        if(url.indexOf("/sitepages/") > 0) {
+        if(url.indexOf("/sitepages/") > 0 || url.indexOf("/pages/") > 0) {
+            isPagesLib = true;
             isListOrLibrary = true;
-            spWebUrl = url.substring(0, url.indexOf("/sitepages/"));
+            spWebUrl = url.indexOf("/sitepages/") > 0 ? url.substring(0, url.indexOf("/sitepages/")) : url.substring(0, url.indexOf("/pages/"));
             isPage = url.indexOf("/forms/") < 0 && url.indexOf(".aspx") == url.length - ".aspx".length;
     
             if(isPage) {
                 pageUrl = url;
             }
         }
-        else if(url.indexOf("/forms/") > 0) {
+        
+        if(url.indexOf("/forms/") > 0) {
             isListOrLibrary = true;
     
             let splittedUrl = url.substring(0, url.indexOf("/forms/")).split("/");
@@ -73,7 +76,14 @@ chrome.storage.sync.get({
         else if(url.indexOf("/_layouts/") > 0) {
             spWebUrl = url.substring(0, url.indexOf("/_layouts/"));
         }
-        else {
+        else if(!isPage && url.indexOf(".aspx") == url.length - ".aspx".length) {
+          isPage = true;
+          pageUrl = url;
+          let splittedUrl = url.split("/");
+          splittedUrl.splice(-1);
+          spWebUrl = splittedUrl.join('/');
+        }
+        else if (!isPagesLib) {
             spWebUrl = url;
             isPage = true;
             pageUrl = url;

@@ -1,0 +1,35 @@
+// app global css in SCSS form
+
+.no-underline {
+  &,
+  &:hover,
+  &:active,
+  &:visited,
+  &:focus {
+    text-decoration: none;
+  }
+}
+
+.q-footer {
+  position: unset;
+}
+
+.edit-btn {
+  width: 30px;
+  height: 30px;
+  bottom: 60px;
+  right: 5px;
+  position: fixed;
+}
+
+body.q-body--prevent-scroll {
+  position: unset !important;
+}
+
+.disable-column {
+  max-width: 40px;
+}
+
+.delete-column {
+  max-width: 60px;
+}

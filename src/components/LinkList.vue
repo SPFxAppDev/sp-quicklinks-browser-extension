@@ -75,12 +75,12 @@ export default defineComponent({
     const promptHeadline = ref<string>('');
     const promptWasCanceled = ref<boolean>(false);
 
-    return { prompt, promptValue, promptHeadline };
+    return { prompt, promptValue, promptHeadline, promptWasCanceled };
   },
   methods: {
     async onLinkClicked(linkItem: LinkItem) {
       currentClickedItem = linkItem;
-      if (linkItem.type === LinkItemType.SPFxApp) {
+      if (linkItem.type == LinkItemType.SPFxApp) {
         this.promptHeadline =
           'Please enter your app extenion ID from manifest.json';
         this.promptValue = '';

@@ -143,10 +143,10 @@ export default defineComponent({
       this.sections = allItems;
     },
     isUrlFieldDisabled(linkitem: LinkItem) {
-      return linkitem.type !== LinkItemType.Custom;
+      return linkitem.type != LinkItemType.Custom;
     },
     isLinkDeletable(linkitem: LinkItem) {
-      return linkitem.type === LinkItemType.Custom;
+      return linkitem.type == LinkItemType.Custom;
     },
   },
 });

@@ -179,13 +179,13 @@ export default defineComponent({
             return;
           }
 
-          if (!isPage && linkItem.type === LinkItemType.Page) {
+          if (!isPage && linkItem.type == LinkItemType.Page) {
             return;
           }
 
           if (
             !isPage &&
-            linkItem.type === LinkItemType.Custom &&
+            linkItem.type == LinkItemType.Custom &&
             linkItem.url.indexOf('{pageurl}') >= 0
           ) {
             return;
